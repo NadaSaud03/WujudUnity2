@@ -46,4 +46,14 @@ public class CharacterInteraction : MonoBehaviour
             PlaySpeech();
         }
     }
+    void OnMouseDown()
+    {
+#if UNITY_ANDROID || UNITY_IOS
+    if (isPlayerNear && !audioSource.isPlaying)
+    {
+        PlaySpeech();
+    }
+#endif
+    }
+
 }
